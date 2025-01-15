@@ -1,2 +1,4 @@
-public class Ticket {
+public enum Ticket {
+    Normal,
+    Vip
 }

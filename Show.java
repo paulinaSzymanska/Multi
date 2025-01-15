@@ -1,3 +1,9 @@
+import java.util.List;
+
 public class Show {
-    //seans
+    List<String> shows;
+
+    public Show(List<String> shows) {
+        this.shows = shows;
+    }
 }

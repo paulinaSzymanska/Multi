@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class System {
+public class CinemaSystem {
     List<Cinema> cinemas = new ArrayList<>();
 
     public void addCinema(Cinema cinema) {
@@ -11,4 +11,7 @@ public class System {
     public void removeCinema(Cinema cinema) {
         cinemas.remove(cinema);
     }
+
+
+
 }
