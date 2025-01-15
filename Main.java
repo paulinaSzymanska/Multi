@@ -7,13 +7,13 @@ public class Main {
     public static void main(String[] args) {
         CinemaSystem cinemaSystem = new CinemaSystem();
 
-        Show show1 = new Show(List.of("Mufasa", "calienczka"));
-        Show show2 = new Show(List.of("Gladiator", "Psy"));
-        Show show3 = new Show(List.of("Mufasa", "ABC"));
-        Show show4 = new Show(List.of("Przyroda i ty", "Kiepscy"));
-        Show show5 = new Show(List.of("Diana", "Zorro"));
-        Show show6 = new Show(List.of("Zoo", "Pingwiny"));
-        Show show7 = new Show(List.of("Sushi", "Corgi"));
+        Show show1 = new Show(List.of("Mufasa", "calienczka"), ShowType.VIP);
+        Show show2 = new Show(List.of("Gladiator", "Psy"), ShowType.VIP);
+        Show show3 = new Show(List.of("Mufasa", "ABC"), ShowType.NORMAL);
+        Show show4 = new Show(List.of("Przyroda i ty", "Kiepscy"), ShowType.THREED);
+        Show show5 = new Show(List.of("Diana", "Zorro"), ShowType.VIP);
+        Show show6 = new Show(List.of("Zoo", "Pingwiny"), ShowType.THREED);
+        Show show7 = new Show(List.of("Sushi", "Corgi"), ShowType.VIP);
         Map<Integer, Show> shows = new HashMap<>();
 
         shows.put(1, show1);
@@ -25,11 +25,11 @@ public class Main {
 
         Map<Integer, Show> showsCin2 = new HashMap<>();
 
-        shows.put(1, show5);
-        shows.put(2, show6);
-        shows.put(3, show7);
-        shows.put(4, show4);
-        shows.put(5, show1);
+        showsCin2.put(1, show5);
+        showsCin2.put(2, show6);
+        showsCin2.put(3, show7);
+        showsCin2.put(4, show4);
+        showsCin2.put(5, show1);
         Repertoire repertoire2 = new Repertoire(showsCin2);
 
         Cinema cinema1 = new Cinema("Cinema1", repertoire);
@@ -40,8 +40,15 @@ public class Main {
         cinemaSystem.addCinema(cinema2);
 
         cinema1.reserveShow(show1);
-        cinema2.buyTickets(Ticket.Vip);
+        TicketBuyer ticketBuyer = new TicketBuyer();
+        Person person = new Person("Heniek");
+        ticketBuyer.buyTickets(Ticket.Vip, person);
 
-        cinema2.checkRepertoire();
+        //ok
+        person.checkMyTickets();
+
+        ticketBuyer.buyTickets(Ticket.Normal);
+        //ok
+//        cinema2.checkRepertoire();
     }
 }

@@ -9,17 +9,17 @@ public class Cinema {
     }
 
 
-    public boolean checkIfShowExists(Show show) {
-        return false;
-    }
+//    public boolean checkIfShowExists(Show show) {
+//        return false;
+//    }
 
     public void reserveShow(Show show) {
         System.out.println("Reservating show....");
     }
 
-    public void buyTickets(Ticket ticket) {
-        System.out.println("you bought ticket " + ticket.name() + " in cinema " + name);
-    }
+//    public void buyTickets(Ticket ticket) {
+//        System.out.println("you bought ticket " + ticket.name() + " in cinema " + name);
+//    }
 
     public void checkRepertoire() {
         repertoire.printCurrentRepertoire();
