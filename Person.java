@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Person {
-    private String name;
-    private List<Ticket> tickets = new ArrayList<>();
+    private final String name;
+    private final List<Ticket> tickets = new ArrayList<>();
 
     public Person(String name) {
         this.name = name;

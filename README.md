@@ -1,3 +1,4 @@
-# Multi
+# Diagram of Multi project:
 
-//diagram klas dla systemu
+![Diagram image](images/DiagramImage.png)
+

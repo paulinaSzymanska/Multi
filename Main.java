@@ -5,50 +5,54 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
-        CinemaSystem cinemaSystem = new CinemaSystem();
+        Show show1 = new Show("Mufasa", ShowType.VIP, 20);
+        Show show2 = new Show("Gladiator", ShowType.VIP, 20);
+        Show show3 = new Show("ABC", ShowType.NORMAL, 32);
+        Show show4 = new Show("Przyroda i t", ShowType.THREED, 32);
+        Show show5 = new Show("Diana", ShowType.VIP, 111);
+        Show show6 = new Show("Pingwiny", ShowType.THREED, 11);
+        Show show7 = new Show("Corgi", ShowType.VIP, 43);
+        Map<Integer, List<Show>> showsCin1 = new HashMap<>();
 
-        Show show1 = new Show(List.of("Mufasa", "calienczka"), ShowType.VIP);
-        Show show2 = new Show(List.of("Gladiator", "Psy"), ShowType.VIP);
-        Show show3 = new Show(List.of("Mufasa", "ABC"), ShowType.NORMAL);
-        Show show4 = new Show(List.of("Przyroda i ty", "Kiepscy"), ShowType.THREED);
-        Show show5 = new Show(List.of("Diana", "Zorro"), ShowType.VIP);
-        Show show6 = new Show(List.of("Zoo", "Pingwiny"), ShowType.THREED);
-        Show show7 = new Show(List.of("Sushi", "Corgi"), ShowType.VIP);
-        Map<Integer, Show> shows = new HashMap<>();
+        showsCin1.put(1, List.of(show1, show2));
+        showsCin1.put(2, List.of(show3, show2));
+        showsCin1.put(3, List.of(show4, show7));
+        showsCin1.put(4, List.of(show5, show3));
+        showsCin1.put(5, List.of(show6, show5));
+        Repertoire repertoire = new Repertoire(showsCin1);
 
-        shows.put(1, show1);
-        shows.put(2, show2);
-        shows.put(3, show3);
-        shows.put(4, show4);
-        shows.put(5, show5);
-        Repertoire repertoire = new Repertoire(shows);
+        Map<Integer, List<Show>> showsCin2 = new HashMap<>();
 
-        Map<Integer, Show> showsCin2 = new HashMap<>();
-
-        showsCin2.put(1, show5);
-        showsCin2.put(2, show6);
-        showsCin2.put(3, show7);
-        showsCin2.put(4, show4);
-        showsCin2.put(5, show1);
+        showsCin2.put(1, List.of(show6, show2));
+        showsCin2.put(2, List.of(show7, show2));
+        showsCin2.put(3, List.of(show1, show1));
+        showsCin2.put(4, List.of(show3, show3));
+        showsCin2.put(5, List.of(show2, show5));
         Repertoire repertoire2 = new Repertoire(showsCin2);
 
         Cinema cinema1 = new Cinema("Cinema1", repertoire);
         Cinema cinema2 = new Cinema("Cinema2", repertoire2);
 
-
-        cinemaSystem.addCinema(cinema1);
-        cinemaSystem.addCinema(cinema2);
-
-        cinema1.reserveShow(show1);
+        Reservation reservation = new Reservation();
         TicketBuyer ticketBuyer = new TicketBuyer();
         Person person = new Person("Heniek");
-        ticketBuyer.buyTickets(Ticket.Vip, person);
 
-        //ok
-        person.checkMyTickets();
+        //chcemy mieć możliwość rezerwacji miejsc przed seansem - DONE
+//        System.out.println("Reservation of the ticker finished with the result: " + reservation.reserveShow(cinema1, show1));
 
-        ticketBuyer.buyTickets(Ticket.Normal);
-        //ok
+        //chcemy mieć możliwość kupienia biletów z wyprzedzeniem - DONE
+//        ticketBuyer.buyTickets(Ticket.Vip, person);
+
+//        chcemy mieć możliwość sprawdzenia repertuaru na najbliższy tydzień - DONE
+//        chcemy mieć możliwość obsługi seansów VIP i 3D- DONE
 //        cinema2.checkRepertoire();
+
+//        chcemy mieć możliwość sprawdzenia swoich biletów - DONE
+//        ticketBuyer.buyTickets(Ticket.Vip, person);
+//        person.checkMyTickets();
+
+//        chcemy mieć możliwość zakupu biletów bez konta- DONE
+//        ticketBuyer.buyTickets(Ticket.Normal);
+
     }
 }

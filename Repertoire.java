@@ -1,11 +1,7 @@
+import java.util.List;
 import java.util.Map;
 
-public class Repertoire {
-    Map<Integer, Show> shows;
-
-    public Repertoire(Map<Integer, Show> shows) {
-        this.shows = shows;
-    }
+public record Repertoire(Map<Integer, List<Show>> shows) {
 
     public void printCurrentRepertoire() {
         for (Integer i : shows.keySet()) {
